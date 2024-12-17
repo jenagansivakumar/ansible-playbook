@@ -1,0 +1,9 @@
+---
+- name: Run Docker Compose
+  hosts: all
+  become: true
+  tasks:
+    - name: Run Docker Compose
+      shell: docker-compose up -d
+      args:
+        chdir: "{{ ansible_env.PWD }}"
